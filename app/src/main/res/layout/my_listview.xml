@@ -14,7 +14,8 @@
         android:maxHeight="60dp"
         android:minWidth="60dp"
         android:maxWidth="60dp"
-        android:src="@drawable/close"/>
+        android:src="@drawable/close"
+       />
 
     <TextView
         android:id="@+id/title"
@@ -37,5 +38,16 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textSize="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="work"
+        android:id="@+id/tag"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignRight="@+id/time"
+        android:layout_alignEnd="@+id/time"
+        android:textColor="@android:color/holo_red_light" />
 
 </RelativeLayout>

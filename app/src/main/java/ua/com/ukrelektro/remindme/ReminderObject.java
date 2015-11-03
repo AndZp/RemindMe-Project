@@ -10,6 +10,23 @@ public class ReminderObject {
     private String text;
     private Date date;
     private Tags tag;
+    private Boolean status;
+
+    ReminderObject(String title, Tags tag) {
+        this.title = title;
+        this.date = new Date();
+        this.tag = tag;
+        this.status = false;
+    }
+
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 
     public String getTitle() {
         return title;
@@ -42,7 +59,6 @@ public class ReminderObject {
     public void setTag(Tags tag) {
         this.tag = tag;
     }
-    void test(){
 
-    }
+
 }

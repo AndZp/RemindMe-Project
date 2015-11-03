@@ -1,15 +1,28 @@
 package ua.com.ukrelektro.remindme;
 
 import android.app.Activity;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
  * Created by User on 03.11.2015.
  */
 public class MainActivity extends Activity {
+    private ListView listView;
+    private ListViewAdapter adapter;
+    private TypedArray images;
+
     private Toolbar toolbar;
 
     @Override
@@ -17,7 +30,50 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        
+        initImages();
         initToolbar();
+        initListView();
+    }
+
+    private void initListView() {
+        listView = (ListView) findViewById(R.id.list);
+
+        // инициализация нашего адаптера
+        adapter = new ListViewAdapter(this, initData());
+        listView.setAdapter(adapter);
+
+        // По клику будем выводить текст элемента
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getApplicationContext(), adapter.getItem(position).toString(),
+//                        Toast.LENGTH_SHORT).show();
+//            }
+//        });
+    }
+
+    private ArrayList<ReminderObject> initData() {
+        ArrayList<ReminderObject> reminderObjects = new ArrayList<ReminderObject>();
+        reminderObjects.add(new ReminderObject("Do cool app", Tags.Work));
+        reminderObjects.add(new ReminderObject("Go to Bar", Tags.Rest));
+        reminderObjects.add(new ReminderObject("Learn all Android SDK", Tags.Learn));
+        reminderObjects.add(new ReminderObject("My birthday", Tags.BirthDay));
+        reminderObjects.get(2).setStatus(true);
+        reminderObjects.get(3).setStatus(true);
+        reminderObjects.add(new ReminderObject("Find job", Tags.Work));
+        reminderObjects.add(new ReminderObject("Go to Bar again", Tags.Rest));
+        reminderObjects.add(new ReminderObject("Learn all C#", Tags.Learn));
+        reminderObjects.add(new ReminderObject("My birthday", Tags.BirthDay));
+        return  reminderObjects;
+    }
+
+
+    // Инициализируем изображения с помощью ресурса изображений
+    // данный ресурс будет рассмотрен ниже
+    private void initImages() {
+        Resources res = getResources();
+        images = res.obtainTypedArray(R.array.images);
     }
 
     private void initToolbar() {
@@ -32,4 +88,6 @@ public class MainActivity extends Activity {
 
         toolbar.inflateMenu(R.menu.menu);
     }
+
+
 }
