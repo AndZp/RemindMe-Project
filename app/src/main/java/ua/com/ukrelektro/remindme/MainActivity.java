@@ -6,13 +6,9 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 /**
@@ -30,7 +26,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        
+
         initImages();
         initToolbar();
         initListView();
@@ -43,14 +39,6 @@ public class MainActivity extends Activity {
         adapter = new ListViewAdapter(this, initData());
         listView.setAdapter(adapter);
 
-        // По клику будем выводить текст элемента
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(getApplicationContext(), adapter.getItem(position).toString(),
-//                        Toast.LENGTH_SHORT).show();
-//            }
-//        });
     }
 
     private ArrayList<ReminderObject> initData() {
@@ -65,7 +53,7 @@ public class MainActivity extends Activity {
         reminderObjects.add(new ReminderObject("Go to Bar again", Tags.Rest));
         reminderObjects.add(new ReminderObject("Learn all C#", Tags.Learn));
         reminderObjects.add(new ReminderObject("My birthday", Tags.BirthDay));
-        return  reminderObjects;
+        return reminderObjects;
     }
 
 

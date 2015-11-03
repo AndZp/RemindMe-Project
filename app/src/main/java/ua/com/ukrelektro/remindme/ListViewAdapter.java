@@ -100,25 +100,4 @@ public class ListViewAdapter extends ArrayAdapter<String> {
 
         return view;
     }
-
-
-//    @Override
-//      public void onClick(View v) {
-//        int position = (int)v.getTag();
-//        switch (v.getId()) {
-//            case R.id.imageView:
-//                Toast.makeText(context, position + "TODO Change status",
-//                        Toast.LENGTH_SHORT).show();
-//                // data.get(position).setStatus(!data.get(position).getStatus());
-//                break;
-//            case R.id.title:
-//                //Toast.makeText(context, getItem(position).toString(),
-//                //        Toast.LENGTH_SHORT).show();
-//            case R.id.time:
-//                Toast.makeText(context, "TODO Intent to calendar",
-//                        Toast.LENGTH_SHORT).show();
-//            default:
-//                break;
-//        }
-//    }
 }
