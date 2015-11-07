@@ -1,4 +1,4 @@
-package ua.com.ukrelektro.remindme;
+package ua.com.ukrelektro.remindme.models;
 
 import java.util.Date;
 
@@ -12,7 +12,7 @@ public class ReminderObject {
     private Tags tag;
     private Boolean status;
 
-    ReminderObject(String title, Tags tag) {
+    public ReminderObject(String title, Tags tag) {
         this.title = title;
         this.date = new Date();
         this.tag = tag;
