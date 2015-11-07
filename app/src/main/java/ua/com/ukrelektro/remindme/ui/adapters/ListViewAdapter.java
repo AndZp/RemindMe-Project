@@ -1,4 +1,4 @@
-package ua.com.ukrelektro.remindme;
+package ua.com.ukrelektro.remindme.ui.adapters;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -15,6 +15,9 @@ import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.util.List;
+
+import ua.com.ukrelektro.remindme.R;
+import ua.com.ukrelektro.remindme.models.ReminderObject;
 
 /**
  * Created by User on 03.11.2015.
